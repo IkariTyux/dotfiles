@@ -6,7 +6,6 @@ esac
 
 # Path to your oh-my-bash installation.
 export OSH='/home/asuka/.oh-my-bash'
-export GITHUB_TOKEN='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' 
 
 OSH_THEME="rr"
 

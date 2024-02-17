@@ -19,7 +19,7 @@
 # Script:
 
 # GitHub username
-USER="DruidroyaIt"
+USER="IkariTyux"
 
 # GitHub user account URL
 URL="git@github.com:$USER/"
