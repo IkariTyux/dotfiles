@@ -1,0 +1,17 @@
+#!/bin/bash
+ROFI_TEXT="Exit i3"
+typeset -A menu
+menu=(
+    [" Logout"]="i3-msg exit"
+    ["⏼ Shutdown"]="shutdown now"
+    [" Reboot"]="reboot"
+    [" Sleep"]="systemctl suspend"
+)
+launcher_options=(-dmenu -i -lines "${#menu[@]}" -p "${ROFI_TEXT}" \
+         "${ROFI_COLORS[@]}" "${ROFI_OPTIONS[@]}") 
+launcher=(rofi "${launcher_options[@]}")
+selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launcher[@]}")"
+if [[ -n $selection ]]
+then
+    exec ${menu[${selection}]}
+fi

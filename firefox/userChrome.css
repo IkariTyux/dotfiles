@@ -1,0 +1,23 @@
+#sidebar-header {
+  visibility: collapse;
+}
+
+#sidebar-box {
+  position: right;
+}
+
+/*#TabsToolbar
+{
+    visibility: collapse;
+}*/
+
+#nav-bar{
+ margin-top: 5px;
+ margin-left: 5px;
+ margin-right: 5px;
+ margin-bottom: 5px;
+}
+
+#PlacesToolbar {
+ padding-bottom: 5px;
+}

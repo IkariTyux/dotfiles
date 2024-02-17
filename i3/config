@@ -1,0 +1,214 @@
+##############################################
+#  ___ _____    ____             __ _        #
+# |_ _|___ /   / ___|___  _ __  / _(_) __ _  #
+#  | |  |_ \  | |   / _ \| '_ \| |_| |/ _` | #
+#  | | ___) | | |__| (_) | | | |  _| | (_| | #
+# |___|____/   \____\___/|_| |_|_| |_|\__, | #
+#                                     |___/  #
+##############################################
+
+# Set $mod Key
+# Mod 1 = Alt
+# Mod 4 = Win
+set $mod Mod4
+
+# Set font
+font pango:monospace 9
+
+# Launch XDG related stuff
+exec --no-startup-id dex --autostart --environment i3
+
+# Audio keys
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Media keys
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym $mod+Tab exec playerctl next
+bindsym $mod+Shift+Tab exec playerctl previous
+
+# Custom bindings
+bindsym $mod+n exec kill -s USR1 $(pidof deadd-notification-center)
+bindsym $mod+Return exec kitty
+bindsym --release $mod+Mod1+Escape exec xkill
+
+# Lock screen
+bindsym $mod+Delete exec betterlockscreen -l 
+bindsym $mod+Mod1+Delete exec betterlockscreen -l && sleep 0.5 && systemctl suspend
+
+
+# Rofi launchers
+bindsym $mod+b exec rofi-bluetooth
+bindsym $mod+Mod1+d exec --no-startup-id scrot -d 1 & rofi -i -show drun -modi drun -show-icons
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -config /home/shinji/.config/rofi/daily.rasi
+bindsym $mod+Shift+g exec --no-startup-id rofi -show drun -show-icons -config /home/shinji/.config/rofi/games.rasi
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run
+bindsym $mod+s exec --no-startup-id rofi -show ssh
+bindsym $mod+w exec --no-startup-id rofi -i -show window -modi window -show-icon
+bindsym XF86Eject exec --no-startup-id /home/shinji/.config/rofi/rofi-exit
+bindsym $mod+Shift+Delete exec --no-startup-id /home/shinji/.config/rofi/rofi-exit
+bindsym $mod+Mod1+g exec --no-startup-id /home/shinji/.config/rofi/rofi-git.sh
+bindsym $mod+g exec --no-startup-id /home/shinji/.config/rofi/github-repos.sh
+
+# Change the key repetition time (time in ms and keys by repeat)
+exec_always xset r rate 185 75
+
+# Programs to run at start
+exec /home/shinji/.autorandr.sh
+exec polybar -r
+exec_always feh --bg-fill /home/shinji/Pictures/.wallpaper/current.png
+exec_always --no-startup-id picom -bf --config /home/shinji/.config/picom/picom.conf
+exec nextcloud
+exec deadd-notification-center
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Colors                 border  bground text    indicator child_border
+client.focused          #0db9d7 #1A1B26 #0db9d7 #0db9d7   #0db9d7
+client.focused_inactive #1A1B26 #24283b #0db9d7 #24283b   #24283b
+client.unfocused        #1A1B26 #24283b #0db9d8 #24283b   #24283b
+client.urgent           #ba0000 #ba0000 #ba0000 #ba0000   #ba0000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+# Windows Proprieties
+for_window [class="^.*"] border pixel 2
+for_window [class="Genymotion Player"] floating enable, resize set height 729 ,resize set width 1692, move position center
+for_window [class="archfetch"] floating enable, resize set height 435 ,resize set width 680, move position center
+for_window [all] title_format "<b> %title</b>"
+title_align center
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# Dragging mode
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# Change Focus:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move Window:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+ampersand workspace number $ws1
+bindsym $mod+eacute workspace number $ws2
+bindsym $mod+quotedbl workspace number $ws3
+bindsym $mod+apostrophe workspace number $ws4
+bindsym $mod+parenleft workspace number $ws5
+bindsym $mod+minus workspace number $ws6
+bindsym $mod+egrave workspace number $ws7
+bindsym $mod+underscore workspace number $ws8
+bindsym $mod+ccedilla workspace number $ws9
+bindsym $mod+agrave workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+ampersand move container to workspace number $ws1
+bindsym $mod+Shift+eacute move container to workspace number $ws2
+bindsym $mod+Shift+quotedbl move container to workspace number $ws3
+bindsym $mod+Shift+apostrophe move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+minus move container to workspace number $ws6
+bindsym $mod+Shift+egrave move container to workspace number $ws7
+bindsym $mod+Shift+underscore move container to workspace number $ws8
+bindsym $mod+Shift+ccedilla move container to workspace number $ws9
+bindsym $mod+Shift+agrave move container to workspace number $ws10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # bindings for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+        
+	# back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+########
+# Gaps #
+########
+gaps inner 7
+gaps outer 5
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Mod1+underscore mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
