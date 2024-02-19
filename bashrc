@@ -1,10 +1,11 @@
+# Bash config file
+
 # Enable the subsequent settings only in interactive sessions
 case $- in
   *i*) ;;
     *) return;;
 esac
 
-# Path to your oh-my-bash installation.
 export OSH='/home/asuka/.oh-my-bash'
 
 OSH_THEME="rr"
@@ -37,5 +38,3 @@ alias arpscan="sudo arp-scan --localnet"
 
 alias tmuxa="tmux attach -t"
 alias tmuxk="tmux kill-session -t"
-
-
