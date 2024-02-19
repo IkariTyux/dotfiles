@@ -8,8 +8,6 @@
 - polybar
 - rofi
 - feh
-- lxappearance
-- sddm
 - [deadd notification center](https://github.com/phuhl/linux_notification_center)
 - [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen)
 
