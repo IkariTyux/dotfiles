@@ -35,6 +35,7 @@ bindsym $mod+Shift+Tab exec playerctl previous
 bindsym $mod+n exec kill -s USR1 $(pidof deadd-notification-center)
 bindsym $mod+Return exec kitty
 bindsym --release $mod+Mod1+Escape exec xkill
+bindsym $mod+Shift+p exec polybar-msg cmd restart
 
 # Lock screen
 bindsym $mod+Delete exec betterlockscreen -l 
@@ -44,7 +45,8 @@ bindsym $mod+Mod1+Delete exec betterlockscreen -l && sleep 0.5 && systemctl susp
 # Rofi launchers
 bindsym $mod+b exec rofi-bluetooth
 bindsym $mod+Mod1+d exec --no-startup-id scrot -d 1 & rofi -i -show drun -modi drun -show-icons
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -config /home/shinji/.config/rofi/daily.rasi
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+#bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -config /home/shinji/.config/rofi/daily.rasi
 bindsym $mod+Shift+g exec --no-startup-id rofi -show drun -show-icons -config /home/shinji/.config/rofi/games.rasi
 bindsym $mod+Shift+d exec --no-startup-id rofi -show run
 bindsym $mod+s exec --no-startup-id rofi -show ssh
