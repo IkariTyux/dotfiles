@@ -49,12 +49,13 @@ use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v2.x',
   requires = {
-    -- LSP Support
+
+-- LSP Support
     {'neovim/nvim-lspconfig'},             -- Required
     {                                      -- Optional
       'williamboman/mason.nvim',
       run = function()
-        pcall(vim.cmd, 'MasonUpdate')
+        call(vim.cmd, 'MasonUpdate')
       end,
     },
     {'williamboman/mason-lspconfig.nvim'}, -- Optional
