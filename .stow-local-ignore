@@ -21,5 +21,4 @@ _darcs
 ^/COPYING
 
 # My own ignore
-.github*
-.
+\.github.*
