@@ -11,7 +11,7 @@ export PATH="$PATH:/home/$USER/.local/bin:/home/$USER/.local/bin/scripts"
 
 ### Aliases ###
 # Customization
-alias ff="fastfetch --kitty-icat ~/Pictures/.pp/neofetch.png"
+alias ff="fastfetch --kitty-icat ~/.config/fastfetch/fetch.png"
 
 # Tmux
 alias tmuxa="tmux attach"
