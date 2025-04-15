@@ -1,0 +1,17 @@
+#!/bin/bash
+ROFI_TEXT="󰑓 Reload services Menu"
+typeset -A menu
+menu=(
+    [" I3"]="i3 restart"
+    [" Polybar"]="/home/shinji/.config/polybar/start.sh"
+    [" Picom"]="/home/shinji/.config/picom/launch.sh"
+    ["󰍹 Xrandr"]="xrandr --auto"
+)
+launcher_options=(-dmenu -i -lines "${#menu[@]}" -p "${ROFI_TEXT}" \
+         "${ROFI_COLORS[@]}" "${ROFI_OPTIONS[@]}") 
+launcher=(rofi "${launcher_options[@]}")
+selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launcher[@]}")"
+if [[ -n $selection ]]
+then
+    exec ${menu[${selection}]}
+fi

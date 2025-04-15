@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Firefox
+Exec=env MOZ_USE_XINPUT2=1 firefox
+GenericName=Internet
+Icon=firefox
+Type=Application
+MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;application/x-xpinstall;application/pdf;application/json;
+Categories=Network;WebBrowser;daily
+StartupNotify=true
+Terminal=false
+X-MultipleArgs=false
+Keywords=Internet;WWW;Browser;Web;Explorer;
+Actions=new-window;new-private-window;profilemanager;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Fooyin
+Exec=/home/shinji/.local/bin/fooyin/bin/fooyin
+GenericName=Music
+Terminal=false
+Type=Application
+Icon=org.fooyin.fooyin
+Categories=music;daily;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Spectacle
+Exec=spectacle
+GenericName=Screenshots
+Terminal=false
+Type=Application
+Icon=spectacle
+Categories=daily;

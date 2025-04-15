@@ -1,0 +1,17 @@
+configuration {
+terminal: "/usr/bin/kitty";
+icon-theme: "Tokyonight-Dark";
+show-icons: true;
+cycle: false;
+sidebar-mode: false;
+click-to-exit: true;
+window-thumbnail: true;
+display-window: "Running Windows";
+display-ssh: "SSH Connexions";
+display-drun: "App Menu";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+}
+@theme "themes/Arc-Dark.rasi"

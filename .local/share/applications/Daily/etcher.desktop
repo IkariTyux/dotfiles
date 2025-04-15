@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Etcher
+GenericName=Bootable USB
+Exec=/home/shinji/.local/bin/etcher.AppImage --extract-and-run
+Icon=etcher
+Terminal=false
+Type=Application
+Categories=daily;

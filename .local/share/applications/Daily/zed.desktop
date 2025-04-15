@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Zed
+Exec=/home/shinji/.local/bin/zed -n
+GenericName=IDE
+Terminal=false
+Type=Application
+Icon=zed
+Categories=daily

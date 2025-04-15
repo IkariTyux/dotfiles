@@ -1,0 +1,15 @@
+configuration {
+terminal: "/usr/bin/kitty";
+drun-categories: "daily";
+cycle: false;
+sidebar-mode: false;
+click-to-exit: true;
+display-drun: "App Menu";
+
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+}
+
+@theme "themes/Arc-Dark.rasi"

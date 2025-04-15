@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Beeper
+Exec=/home/shinji/.local/bin/beeper.AppImage
+GenericName=Communication
+Terminal=false
+Type=Application
+Icon=/home/shinji/.local/share/icons/custom/beeper.png
+Categories=daily;
