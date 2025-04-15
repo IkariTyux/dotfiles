@@ -17,17 +17,6 @@
 - **Icons**: Tokyonight ![Gnome Store](https://www.gnome-look.org/p/1681475)
 - **Terminal**: Tokyonight Storm ![kitty](https://github.com/davidmathers/tokyo-night-kitty-theme) **/** ![alacritty](https://github.com/zatchheems/tokyo-night-alacritty-theme)
 
-## Colors
-- Main `#24283b`
-- Secondary `#0db9d7`
-- Accent `#ad8ee6`
-- Red `#ED8796`
-- Green `#A6DA95`
-- Yellow `#EED49F`
-- foreground `#ffffff`
-- Alert `#cc1616`
-> Colors inspiration: Catppuccin & Tokyonight
-
 # Polybar
 ![polybar](.github_img/screenshots/polybar.png)
 
