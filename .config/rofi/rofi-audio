@@ -1,0 +1,25 @@
+#!/bin/bash
+
+ids=$(pw-cli ls | awk -F 'id ' '{print $2}' | sed 's/=.*//g' | sed '/^[[:space:]]*$/d'| sed 's/,.*//g')
+for id in $ids
+do
+    cardName=$(pw-cli info $id | awk -F 'node.name = ' '{print $2}' | sed 's/"//g' | sed '/^[[:space:]]*$/d')
+    cardDesc=$(pw-cli info $id | awk -F 'node.description = ' '{print $2}' | sed 's/"//g' | sed '/^[[:space:]]*$/d')
+    if [[ $cardName != *"alsa_output"* ]]
+    then
+	continue
+      else
+	typeset -A menu
+	menu+=(["$cardDesc"]="pactl set-default-sink $cardName")
+      fi
+done 2> /dev/null
+
+ROFI_TEXT="Audio Menu"
+launcher_options=(-dmenu -i -lines "${#menu[@]}" -p "${ROFI_TEXT}" \
+         "${ROFI_COLORS[@]}" "${ROFI_OPTIONS[@]}") 
+launcher=(rofi "${launcher_options[@]}")
+selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launcher[@]}")"
+if [[ -n $selection ]]
+then
+    exec ${menu[${selection}]}
+fi
