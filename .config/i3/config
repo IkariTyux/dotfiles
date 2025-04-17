@@ -40,6 +40,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -config /home/shinji/.config
 bindsym $mod+s exec --no-startup-id rofi -show ssh
 bindsym $mod+w exec /home/shinji/.config/rofi/rofi-wifi/rofi-wifi.sh
 bindsym $mod+Shift+w exec /home/shinji/.config/rofi/rofi-wireguard
+bindsym $mod+a exec /home/shinji/.config/rofi/rofi-audio
 bindsym $mod+Shift+Delete exec --no-startup-id /home/shinji/.config/rofi/rofi-exit
 
 # Programs to run at start
