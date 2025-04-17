@@ -6,6 +6,7 @@
 - rofi
 - kitty
 - nitrogen
+- fastfetch
 - [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen)
 
 ## Themes
