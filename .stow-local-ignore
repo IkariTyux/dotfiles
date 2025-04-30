@@ -22,3 +22,4 @@ _darcs
 
 # My own ignore
 \.github.*
+packer_compiled.lua
