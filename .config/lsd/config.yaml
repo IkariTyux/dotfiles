@@ -1,6 +1,0 @@
-layout: grid
-sorting:
-  # Possible values: extension, name, time, size, version
-  column: name
-  # Possible values: first, last, none
-  dir-grouping: first

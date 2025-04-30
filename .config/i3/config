@@ -47,7 +47,6 @@ bindsym $mod+Shift+Delete exec --no-startup-id /home/shinji/.config/rofi/rofi-ex
 exec xset r rate 185 75
 exec polybar -r
 exec picom -bf --config /home/shinji/.config/picom/picom.conf
-#exec ~/.local/bin/nitrogen.sh
 exec nitrogen --restore
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec deadd-notification-center
@@ -62,6 +61,8 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 # Windows Proprieties
 for_window [class="^.*"] border pixel 0
+for_window [class="kcalc"] floating enable 
+for_window [title="About Betterbird"] floating enable 
 for_window [all] title_format "<b> %title</b>"
 title_align center
 
@@ -90,6 +91,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+m layout tabbed, gaps inner current set 0, gaps outer current set 0
 bindsym $mod+t layout default, gaps inner current set 5, gaps outer current set 3
+bindsym $mod+Shift+s sticky toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
