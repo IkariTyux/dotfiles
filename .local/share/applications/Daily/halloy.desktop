@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Halloy
-Exec=/home/shinji/.local/bin/halloy
-GenericName=IRC
-Terminal=false
-Type=Application
-Icon=org.squidowl.halloy
-Categories=daily

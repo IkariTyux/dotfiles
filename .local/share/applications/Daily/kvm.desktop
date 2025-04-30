@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=KVM Manager
-GenericName=Virtual machines
-Icon=virt-manager
-Exec=virt-manager
-Type=Application
-Terminal=false
-Keywords=vmm;
-Categories=System;daily

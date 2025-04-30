@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Supersonic
-Exec=/home/shinji/.local/bin/supersonic
-Icon=Supersonic
-GenericName=Music streaming
-Categories=Audio;AudioVideo;daily
-Keywords=fyne;
